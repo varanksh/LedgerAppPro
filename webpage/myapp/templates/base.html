@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ledger App</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Body background setup */
+        body {
+            background-image: url('/static/3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            color: white;
+            margin: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        /* Section styles */
+        .sec {
+            height: 250px;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            margin-top:5%;
+        }
+
+        .welcome {
+            
+            font-size: 6vw; /* Responsive font size */
+            font-weight: bold; /* Bold text for emphasis */
+            background: linear-gradient(90deg, #00c6ff, #0072ff); /* Gradient text */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: gradient; /* Text gradient effect */
+            text-align: center;
+             
+            animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+            letter-spacing: 5px; /* Add space between letters for readability */
+            margin-right: 4%; /* Optional margin adjustment */
+        }
+        
+        /* Keyframes for fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+
+        /* Third section styling */
+        .third {
+            width: 40%;
+            height:50%;
+            text-align: center;
+            padding: 20px;
+            
+            margin-left:45%;
+            margin-top:-16%;
+            color:white;
+        }
+
+        .ledger {
+            font-size: 2.5em;
+        }
+
+        .ledger span {
+            color: blue;
+        }
+
+        .para {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .welcome {
+                font-size: 8vw;
+
+            }
+
+            .third {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .ledger {
+                font-size: 2em;
+            }
+
+            .para {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% include 'header.html' %} 
+    <div class="sec">
+        <h1 class="welcome">Welcome</h1>
+    </div>
+
+    <div class="third">
+        <h1 class="ledger">Easy Accounting & <br>
+            <span>Ledger App</span>
+        </h1>
+        <p class="para">
+            A Ledger records transactions from the journal and forms separate accounts for them in chronological order. 
+            A Ledger is a date-wise record of all the transactions related to a particular account. Ledgers are crucial 
+            sources of financial records. After the preparation of the journal, there comes the classification of journal 
+            entries into separate accounts and posting them in the ledger like a cash account, salary account, payable 
+            accounts, etc., in chronological order.
+        </p>
+    </div>
+</body>
+</html>

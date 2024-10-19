@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .main{
+        height: 100%;
+        background-color: black;
+        margin-top: -25px;
+        border: solid 10px black;
+        
+    }
+    .ledger{
+        font-size:40px;
+        margin-left: 80px;
+        margin-bottom: -20px;
+        color: white;
+    }
+    .ledger:hover{
+        color: orangered;
+    }
+    nav{
+        margin-left: 40%;
+        margin-top: -20px;
+        
+    }
+    ul{
+        margin-left: 40px;
+        text-transform: uppercase;
+        margin-top: -20px;
+    }
+    li{
+        margin-left: 20px;
+    }
+    ul,li,a{
+        margin-left: 5%; 
+        align-items: center;
+        display: flex;
+        text-decoration: none;
+       text-shadow: 20px;
+       color: white;
+       
+    }
+    ul,li,a:hover{
+        color: orangered;
+        text-shadow: 100%;
+    }
+</style>
+<body>
+    <div class="main">
+        <h1 class="ledger"><span>Ledger</span></h1>
+        <nav>
+                <ul>
+                    <li><a href="{% url 'base' %}"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Home</a></li>
+
+                    <li><a href="About"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;About</a></li>
+
+                    <li><a href="{% url 'contact' %}"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;Contact</a></li>
+
+                    {% if user.is_authenticated %}
+                    <li><a href="#"><i class="fa-solid fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Welcome,{{ user.username }}!</a></li>
+                    <li><a href="{% url 'logout' %}"><i class="fa-solid fa-user" aria-hidden="true"></i>&nbsp;&nbsp;logout</a></li>
+
+                    {% else %}
+                    <li><a href="{% url 'login' %}"><i class="fa-solid fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Login</a></li>
+
+                    <li><a href="{% url 'register' %}"><i class="fa-solid fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Register</a></li>
+                    {% endif %}
+                    
+                </ul>
+            </nav>
+       
+    </div>
+    <hr>
+</body>
+</html>
